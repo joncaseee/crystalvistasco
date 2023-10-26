@@ -1,0 +1,76 @@
+<html>
+<body>
+    <div>
+        <h1 class="text-center">
+            Get Instant Quote
+        </h1>
+        <form class="form-horizontal" method="post" action="https://worker-square-scene-8512.imnotkayne.workers.dev">
+            <div class="form-group">
+                <label for="firstName">First Name: </label>
+                <input type="text" class="form-control" name="firstName" placeholder="Enter First Name" id="firstName" />
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Last Name: </label>
+                <input type="text" class="form-control" name="lastName" placeholder="Enter Last Name" id="lastName" />
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone: </label>
+                <input type="text" class="form-control" name="phone" placeholder="Enter Phone Number" id="phone" />
+            </div>
+
+            <div class="form-group form-check">
+                <input type="checkbox" name="allowCall" class="form-check-input" id="allowContact" />
+                <label class="form-check-label" for="allowContact">Check This Box If You Allow Us To Reach Out Via Call or Text.</label>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email: </label>
+                <input type="text" class="form-control" name="email" placeholder="Enter Email Address" id="phone" />
+            </div>
+
+            <div class="form-group">
+                <label for="to">Address: </label>
+                <input type="text" class="form-control" name="address" placeholder="Enter Address Here" id="to" />
+            </div>
+
+            <div class="form-group">
+                <label for="type">Type:</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="residential" name="landClassification" value="residential">
+                    <label class="form-check-label" for="residential">Residential</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="commercial" name="landClassification" value="commercial">
+                    <label class="form-check-label" for="commercial">Commercial</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type= "submit" value="Submit" class="btn btn-info btn-lg">   
+            </input>
+            </div>
+
+        </form>
+        
+
+
+
+        <div id="distance"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGXf4EBPZJH_7EYHOisOk9-KoUQpdjvD8&libraries=places&callback=initAutocomplete" async defer></script>
+        <script>var autocomplete;
+            function initAutocomplete() {
+                var optionsTo = {
+                    componentRestrictions: { country: "us" },
+                    types: ["geocode"]
+                };
+                var toInput = document.getElementById("to");
+                autocomplete = new google.maps.places.Autocomplete(toInput, optionsTo);
+            }
+
+            </script>
+
+
+    </div>
+</body>
+</html>
